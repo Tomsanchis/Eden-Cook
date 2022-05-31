@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #000;
+  font-family: 'Segoe UI';
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  margin: 10px;
+}
+
+
+/* HEADER */
+
+header {
+  background: #b3d4fc;
+  border-bottom: 1px solid #000;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+nav img {
+  border-radius: 25px;
+}
+
+nav i {
+  font-size: 2.5rem;
+}
+
+nav ul:nth-child(1) li + li + li {
+  display: none;
+}
+
+nav li:nth-child(2) i {
+  margin: 5px;
+}
+
+.menu {
+  display: none;
+}
+
+.hide {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu li {
+  margin: 10px;
+  font-weight: bold;
+}
+
+
+/* Recete */
+
+main h2 {
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.recete h3 {
+  font-size: 1.5rem;
+}
+
+.recete p {
+  margin: 0 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.recete {
+  display: flex;
+}
+
+/* Ingredients */
+
+.ingredients {
+  margin: 10px;
+  text-align: center;
+  background: #b3d4fc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.ingredients h4 {
+  font-size: 1.3rem;
+}
+
+.ingredients p {
+  font-size: 1.2rem;
+}
+
+.ingredient-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* Shopping List */
+
+.shopping-list {
+  background: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+
+.shopping-list div {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.shopping-list span {
+  margin: 10px;
+}
+
+
+/* Sliders */
+
+.blog div {
+  text-align: center;
+}
+
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b3d4fc;
+  padding: 25px;
+  font-weight: bold;
+}
+
+
+/* Blog */
+
+.blog {
+  padding: 0 25px;
+}
+
+.blog p {
+  text-align: revert;
+}
+
+/* Swipper */
+.swiper {
+  width: 100%;
+  height: 300px;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: none;
+  }
+  nav ul li:nth-child(2) {
+    display: none;
+  }
+  nav ul:nth-child(1) li + li + li {
+    display: block;
+  }
+  nav ul {
+    display: flex;
+    justify-content: left;
+  }
+  nav ul li {
+    margin: 25px;
+  }
+  .flex-column-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex-recete {
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+
+  .ingredient-flex {
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+  .blog {
+    padding: 0;
+  }
+}
