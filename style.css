@@ -55,6 +55,10 @@ nav img {
   border-radius: 25px;
 }
 
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
 nav i {
   font-size: 2.5rem;
 }
@@ -100,6 +104,18 @@ main h2 {
 
 .recete {
   display: flex;
+  border: solid 3px #000;
+  margin: 10px;
+}
+
+.recete img {
+  width: 75px;
+  height: 75px;
+}
+
+.recete div:nth-child(2), .recete div:first-of-type {
+  width: 50%;
+  margin: 10px;
 }
 
 /* Ingredients */
@@ -169,6 +185,28 @@ footer {
   font-weight: bold;
 }
 
+/* ===== Scrollbar CSS ===== */
+
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #b3d4fc #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #b3d4fc;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
 
 /* Blog */
 
@@ -221,5 +259,13 @@ footer {
   }
   .blog {
     padding: 0;
+  }
+
+  .recete p {
+    font-size: 1.8rem;
+  }
+
+  .recete h3 {
+    font-size: 2rem;
   }
 }
