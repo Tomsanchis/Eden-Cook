@@ -72,6 +72,10 @@ let Recipe = [
     description:
       "Dans cette tarte sur une pâte feuilletée, des rondelles de courgettes sautées et une garniture à la menthe et à la feta. Vous verrez que l'association courgette et menthe donne un petit goût frais très agréable.",
     media: "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png",
+    ingredients: [
+      { id: 1, name: "Soja", quantity: "8" },
+      { id: 2, name: "Lait", quantity: "1" },
+    ],
   },
 ];
 const RecipeRender = () => {
