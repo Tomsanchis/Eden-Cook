@@ -77,6 +77,7 @@ nav li:nth-child(2) i {
 
 .hide {
   display: flex;
+  border-top: 1px solid;
   flex-direction: column;
 }
 

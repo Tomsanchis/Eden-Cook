@@ -1,4 +1,4 @@
-// Menu Burger
+//*****\\ Menu Burger //*****\\
 
 const burger = document.querySelector(".burger");
 const Menu = document.querySelector(".menu");
@@ -7,7 +7,7 @@ burger.addEventListener("click", () => {
   Menu.classList.toggle("hide");
 });
 
-// Swipper
+//*****\\ Swipper //*****\\
 
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
@@ -19,7 +19,7 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-// Recettes
+//*****\\ Recettes && Ingredients //*****\\
 
 let Recipe = [
   {
