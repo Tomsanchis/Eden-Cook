@@ -98,6 +98,8 @@ const RecipeRender = () => {
     const description = document.createElement("p");
     description.textContent = data.description;
     seconddiv.appendChild(description);
+
+    //*****\\ Blog //*****\\
   });
 };
 
