@@ -104,8 +104,9 @@ main h2 {
 
 .recete {
   display: flex;
-  border: solid 3px #000;
+  border: solid 3px #b3d4fc;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .recete img {
