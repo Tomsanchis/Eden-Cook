@@ -110,7 +110,7 @@ main h2 {
   border-radius: 5px;
 }
 
-.recete img {
+.recete img, .blog img {
   width: 75px;
   height: 75px;
 }

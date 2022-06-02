@@ -7,18 +7,6 @@ burger.addEventListener("click", () => {
   Menu.classList.toggle("hide");
 });
 
-//*****\\ Swipper //*****\\
-
-const swiper = new Swiper(".swiper", {
-  direction: "horizontal",
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
 //*****\\ Recettes && Ingredients //*****\\
 
 let Recipe = [
@@ -27,7 +15,7 @@ let Recipe = [
     name: "Avocat aux crevettes sautées",
     description:
       "Un avocat aux crevettes classique ? Non, non, dans cette recette les crevettes sont rapidement sautées, pour plus de gout, et ensuite mélangées à une mayonnaise au curry.",
-    media: "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png",
+    media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       { id: 1, name: "Sauce Soja", quantity: "1" },
       { id: 2, name: "Poulet", quantity: "3" },
@@ -38,7 +26,7 @@ let Recipe = [
     name: "Bouchées montagnardes",
     description:
       "Petits canapés simple à faire et délicieux, ces bouchées champignons-saucisse-fromage iront parfaitement pour un apéritif dinatoire par exemple, ou même une entrée conviviale.",
-    media: "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png",
+    media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       { id: 1, name: "Viande", quantity: "5" },
       { id: 2, name: "Moutarde", quantity: "1" },
@@ -49,7 +37,7 @@ let Recipe = [
     name: "Boeuf bourguignon",
     description:
       "Le boeuf bourguignon est un des plats traditionnels de la cuisine Française, ce sont des morceaux de viande de boeuf qu'on fait cuire longtemps, avec de la poitrine fumée, des oignons, carottes et champignons, dans du vin rouge.",
-    media: "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png",
+    media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       { id: 1, name: "Oeuf", quantity: "20" },
       { id: 2, name: "Tomate", quantity: "15" },
@@ -60,7 +48,7 @@ let Recipe = [
     name: "Civet de lapin à la normande",
     description:
       "Pour cette version du civet de lapin, la viande est cuite, avec les os, dans du cidre où elle a marinée une nuit. La sauce est formée ensuite avec le jus de cuisson et de la crème.",
-    media: "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png",
+    media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       { id: 1, name: "Huile", quantity: "2" },
       { id: 2, name: "salade", quantity: "5" },
@@ -71,7 +59,7 @@ let Recipe = [
     name: "Tarte fine courgettes-menthe",
     description:
       "Dans cette tarte sur une pâte feuilletée, des rondelles de courgettes sautées et une garniture à la menthe et à la feta. Vous verrez que l'association courgette et menthe donne un petit goût frais très agréable.",
-    media: "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png",
+    media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       { id: 1, name: "Soja", quantity: "8" },
       { id: 2, name: "Lait", quantity: "1" },
@@ -100,6 +88,28 @@ const RecipeRender = () => {
     seconddiv.appendChild(description);
 
     //*****\\ Blog //*****\\
+
+    const wrapper = document.querySelector(".swiper-wrapper");
+    const slides = document.createElement("div");
+    slides.classList.add("swiper-slide");
+    wrapper.appendChild(slides);
+    const divblog = document.createElement("div");
+    divblog.classList.add("blog");
+    slides.appendChild(divblog);
+    const divblogcontainer = document.createElement("div");
+    divblog.appendChild(divblogcontainer);
+    const imgblog = document.createElement("img");
+    imgblog.src = data.media;
+    imgblog.alt = data.name;
+    divblogcontainer.appendChild(imgblog);
+    const h3blog = document.createElement("h3");
+    h3blog.textContent = data.name;
+    divblogcontainer.appendChild(h3blog);
+    const divblogcontainer2 = document.createElement("div");
+    divblog.appendChild(divblogcontainer2);
+    const descriptionblog = document.createElement("p");
+    descriptionblog.textContent = data.description;
+    divblogcontainer2.appendChild(descriptionblog);
   });
 };
 
@@ -115,3 +125,15 @@ const RenderIngredients = () => {
 };
 
 RenderIngredients();
+
+//*****\\ Swipper //*****\\
+
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  loop: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
