@@ -17,8 +17,19 @@ let Recipe = [
       "Un avocat aux crevettes classique ? Non, non, dans cette recette les crevettes sont rapidement sautées, pour plus de gout, et ensuite mélangées à une mayonnaise au curry.",
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
-      { id: 1, name: "Sauce Soja", quantity: "1" },
-      { id: 2, name: "Poulet", quantity: "3" },
+      {
+        id: 1,
+        name: "Sauce Soja",
+        quantity: "1",
+        media:
+          "https://i.pinimg.com/originals/10/90/37/109037bf0d194eca1933fbac504a20ef.png",
+      },
+      {
+        id: 2,
+        name: "Poulet",
+        quantity: "3",
+        media: "http://assets.stickpng.com/images/580b57fbd9996e24bc43c0ce.png",
+      },
     ],
   },
   {
@@ -28,8 +39,19 @@ let Recipe = [
       "Petits canapés simple à faire et délicieux, ces bouchées champignons-saucisse-fromage iront parfaitement pour un apéritif dinatoire par exemple, ou même une entrée conviviale.",
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
-      { id: 1, name: "Viande", quantity: "5" },
-      { id: 2, name: "Moutarde", quantity: "1" },
+      {
+        id: 1,
+        name: "Viande",
+        quantity: "5",
+        media: "http://assets.stickpng.com/images/580b57fcd9996e24bc43c1c1.png",
+      },
+      {
+        id: 2,
+        name: "Moutarde",
+        quantity: "1",
+        media:
+          "https://img1.freepng.fr/20180630/fqg/kisspng-aioli-blue-cheese-dressing-sour-cream-gravy-crme-mustard-sauce-5b374680a033a5.2059664315303491846562.jpg",
+      },
     ],
   },
   {
@@ -39,8 +61,19 @@ let Recipe = [
       "Le boeuf bourguignon est un des plats traditionnels de la cuisine Française, ce sont des morceaux de viande de boeuf qu'on fait cuire longtemps, avec de la poitrine fumée, des oignons, carottes et champignons, dans du vin rouge.",
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
-      { id: 1, name: "Oeuf", quantity: "20" },
-      { id: 2, name: "Tomate", quantity: "15" },
+      {
+        id: 1,
+        name: "Oeuf",
+        quantity: "20",
+        media: "http://assets.stickpng.com/images/580b57fbd9996e24bc43c108.png",
+      },
+      {
+        id: 2,
+        name: "Tomate",
+        quantity: "15",
+        media:
+          "https://img1.freepng.fr/20171221/hbe/tomato-png-clipart-picture-5a3c47e811b546.8509135715139000080725.jpg",
+      },
     ],
   },
   {
@@ -51,7 +84,13 @@ let Recipe = [
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       { id: 1, name: "Huile", quantity: "2" },
-      { id: 2, name: "salade", quantity: "5" },
+      {
+        id: 2,
+        name: "salade",
+        quantity: "5",
+        media:
+          "https://www.plaineduroussillon.com/wp-content/uploads/2017/06/Salade.png",
+      },
     ],
   },
   {
@@ -61,8 +100,18 @@ let Recipe = [
       "Dans cette tarte sur une pâte feuilletée, des rondelles de courgettes sautées et une garniture à la menthe et à la feta. Vous verrez que l'association courgette et menthe donne un petit goût frais très agréable.",
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
-      { id: 1, name: "Soja", quantity: "8" },
-      { id: 2, name: "Lait", quantity: "1" },
+      {
+        id: 1,
+        name: "Soja",
+        quantity: "8",
+        media: "http://assets.stickpng.com/images/5c55c6ee8c21c9029a0f48aa.png",
+      },
+      {
+        id: 2,
+        name: "Lait",
+        quantity: "1",
+        media: "http://assets.stickpng.com/images/580b57fcd9996e24bc43c1c6.png",
+      },
     ],
   },
 ];
@@ -115,11 +164,30 @@ const RecipeRender = () => {
 
 RecipeRender();
 
+let db = [];
+const recete = document.querySelectorAll(".recete");
+
 const RenderIngredients = () => {
-  const recete = document.querySelectorAll(".recete");
   for (let i = 0; i < recete.length; i++) {
     recete[i].addEventListener("click", () => {
-      console.log(Recipe[i].ingredients);
+      db.push(...Recipe[i].ingredients);
+      console.log(db);
+      db.map((ingredient) => {
+        const ingredientflex = document.querySelector(".ingredient-flex");
+        const divingredient = document.createElement("div");
+        divingredient.classList.add("ingredients");
+        ingredientflex.appendChild(divingredient);
+        const h4 = document.createElement("h4");
+        h4.textContent = ingredient.name;
+        divingredient.appendChild(h4);
+        const image = document.createElement("img");
+        image.src = ingredient.media;
+        image.alt = ingredient.name;
+        divingredient.appendChild(image);
+        const quantiycount = document.createElement("p");
+        quantiycount.textContent = ingredient.quantity;
+        divingredient.appendChild(quantiycount);
+      });
     });
   }
 };

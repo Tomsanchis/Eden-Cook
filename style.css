@@ -110,7 +110,7 @@ main h2 {
   border-radius: 5px;
 }
 
-.recete img, .blog img {
+.recete img, .blog img, .ingredients img {
   width: 75px;
   height: 75px;
 }
@@ -128,6 +128,10 @@ main h2 {
   background: #b3d4fc;
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+.ingredient-container, .recete-container {
+  width: 50%;
 }
 
 .ingredients h4 {
@@ -185,6 +189,7 @@ footer {
   background: #b3d4fc;
   padding: 25px;
   font-weight: bold;
+  background: #b3d4fc;
 }
 
 /* ===== Scrollbar CSS ===== */
