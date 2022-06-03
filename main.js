@@ -40,17 +40,16 @@ let Recipe = [
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       {
-        id: 1,
+        id: 3,
         name: "Viande",
         quantity: "5",
-        media: "http://assets.stickpng.com/images/580b57fcd9996e24bc43c1c1.png",
+        media: "http://assets.stickpng.com/images/580b57fcd9996e24bc43c1c2.png",
       },
       {
-        id: 2,
+        id: 4,
         name: "Moutarde",
         quantity: "1",
-        media:
-          "https://img1.freepng.fr/20180630/fqg/kisspng-aioli-blue-cheese-dressing-sour-cream-gravy-crme-mustard-sauce-5b374680a033a5.2059664315303491846562.jpg",
+        media: "https://shneiders.fr/187-home_default/moutarde-de-dijon.jpg",
       },
     ],
   },
@@ -62,17 +61,17 @@ let Recipe = [
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       {
-        id: 1,
+        id: 5,
         name: "Oeuf",
         quantity: "20",
-        media: "http://assets.stickpng.com/images/580b57fbd9996e24bc43c108.png",
+        media:
+          "https://chefcostaud.com/wp-content/uploads/2021/01/oeuf.png.png",
       },
       {
-        id: 2,
+        id: 6,
         name: "Tomate",
         quantity: "15",
-        media:
-          "https://img1.freepng.fr/20171221/hbe/tomato-png-clipart-picture-5a3c47e811b546.8509135715139000080725.jpg",
+        media: "http://pngimg.com/uploads/tomato/tomato_PNG12599.png",
       },
     ],
   },
@@ -83,10 +82,16 @@ let Recipe = [
       "Pour cette version du civet de lapin, la viande est cuite, avec les os, dans du cidre où elle a marinée une nuit. La sauce est formée ensuite avec le jus de cuisson et de la crème.",
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
-      { id: 1, name: "Huile", quantity: "2" },
       {
-        id: 2,
-        name: "salade",
+        id: 7,
+        name: "Huile",
+        quantity: "2",
+        media:
+          "https://static.wixstatic.com/media/98b8a3_44989801579e435c85f65989e597227f~mv2.png/v1/fill/w_232,h_244,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/amphore-pt.png",
+      },
+      {
+        id: 8,
+        name: "Salade",
         quantity: "5",
         media:
           "https://www.plaineduroussillon.com/wp-content/uploads/2017/06/Salade.png",
@@ -101,16 +106,16 @@ let Recipe = [
     media: "img/5842996fa6515b1e0ad75add.png",
     ingredients: [
       {
-        id: 1,
+        id: 9,
         name: "Soja",
         quantity: "8",
-        media: "http://assets.stickpng.com/images/5c55c6ee8c21c9029a0f48aa.png",
+        media: "http://assets.stickpng.com/images/5c55c7318c21c9029a0f48af.png",
       },
       {
-        id: 2,
+        id: 10,
         name: "Lait",
         quantity: "1",
-        media: "http://assets.stickpng.com/images/580b57fcd9996e24bc43c1c6.png",
+        media: "http://assets.stickpng.com/images/580b57fcd9996e24bc43c1c4.png",
       },
     ],
   },
@@ -166,14 +171,21 @@ RecipeRender();
 
 let db = [];
 const recete = document.querySelectorAll(".recete");
+const ingredientflex = document.querySelector(".ingredient-flex");
 
 const RenderIngredients = () => {
   for (let i = 0; i < recete.length; i++) {
     recete[i].addEventListener("click", () => {
+      ingredientflex.innerHTML = "";
+      db = [];
+      // if (db.indexOf(Recipe[i].ingredients) !== -1) {
+      //   db.push(...Recipe[i].ingredients);
+      //   console.log(db);
+      //   console.log(db[i].id);
+      // }
       db.push(...Recipe[i].ingredients);
       console.log(db);
       db.map((ingredient) => {
-        const ingredientflex = document.querySelector(".ingredient-flex");
         const divingredient = document.createElement("div");
         divingredient.classList.add("ingredients");
         ingredientflex.appendChild(divingredient);

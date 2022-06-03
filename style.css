@@ -128,12 +128,11 @@ main h2 {
   background: #b3d4fc;
   border-radius: 5px;
   padding: 5px 10px;
+  transition: 0.5s;
 }
-
-.ingredient-container, .recete-container {
-  width: 50%;
+.ingredients:hover {
+  transform: scale(1.1);
 }
-
 .ingredients h4 {
   font-size: 1.3rem;
 }
@@ -262,7 +261,7 @@ footer {
 
   .ingredient-flex {
     overflow-y: scroll;
-    max-height: 500px;
+    max-height: 250px;
   }
   .blog {
     padding: 0;
@@ -274,5 +273,9 @@ footer {
 
   .recete h3 {
     font-size: 2rem;
+  }
+  .ingredient-container, .recete-container {
+    width: 50%;
+    min-width: 50%;
   }
 }
